@@ -2,112 +2,197 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Domagoj Gajski</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        background: #f4f7f5;
-        color: #2c3e50;
-    }
 
-    .container {
-        max-width: 950px;
-        margin: auto;
-        padding: 30px;
-    }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    background-color: #f4f7f5;
+    color: #2c3e50;
+    position: relative;
+}
+
+/* Logo watermark */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("Work Logo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 700px;
+
+    opacity: 0.05;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* HERO SECTION */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    background: rgba(255,255,255,0.95);
+
+    padding: 35px;
+    border-radius: 20px;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+
+    margin-top: 30px;
+}
+
+.profile-photo {
+    width: 250px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.hero-text h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 42px;
+    color: #1f3d2b;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* CONTENT BOXES */
+
+.section {
+    background: rgba(255,255,255,0.95);
+
+    margin-top: 25px;
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+    margin-top: 0;
+    color: #1f3d2b;
+
+    border-bottom: 2px solid #dfe8e2;
+    padding-bottom: 8px;
+}
+
+/* RESEARCH TAGS */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: #e4efe8;
+    color: #1f3d2b;
+
+    padding: 8px 15px;
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* BUTTON LINKS */
+
+.button-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button-links a {
+    text-decoration: none;
+
+    background: #1f3d2b;
+    color: white;
+
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.button-links a:hover {
+    background: #2f6f4e;
+}
+
+/* PUBLICATIONS */
+
+.publications li {
+    margin-bottom: 12px;
+}
+
+.publications a {
+    color: #1f3d2b;
+    text-decoration: none;
+}
+
+.publications a:hover {
+    text-decoration: underline;
+}
+
+/* CONTACT */
+
+.contact {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
 
     .hero {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        background: white;
-        padding: 30px;
-        border-radius: 18px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        margin-top: 30px;
+        flex-direction: column;
+        text-align: center;
     }
 
     .profile-photo {
-        width: 220px;
-        border-radius: 18px;
-        object-fit: cover;
+        width: 80%;
+        max-width: 300px;
     }
 
-    .logo {
-        width: 130px;
-        margin-top: 15px;
+    body::before {
+        background-size: 350px;
     }
+}
 
-    h1 {
-        margin-bottom: 5px;
-        font-size: 36px;
-        color: #1f3d2b;
-    }
-
-    h2 {
-        color: #1f3d2b;
-        border-bottom: 2px solid #c9d8ce;
-        padding-bottom: 5px;
-    }
-
-    .section {
-        background: white;
-        padding: 25px;
-        margin-top: 25px;
-        border-radius: 18px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
-
-    .tags span {
-        display: inline-block;
-        background: #e1eee6;
-        color: #1f3d2b;
-        padding: 8px 12px;
-        margin: 5px;
-        border-radius: 20px;
-    }
-
-    a {
-        color: #2f6f4e;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    ul {
-        padding-left: 20px;
-    }
-
-    .links a {
-        display: inline-block;
-        margin: 8px 12px 8px 0;
-        padding: 10px 14px;
-        background: #1f3d2b;
-        color: white;
-        border-radius: 8px;
-    }
-
-    .contact {
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    @media (max-width: 700px) {
-        .hero {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .profile-photo {
-            width: 80%;
-        }
-    }
 </style>
 </head>
 
@@ -117,69 +202,133 @@
 
     <div class="hero">
 
-    <img src="Profile_picture.jpg" alt="Profile photo" class="profile-photo">
+        <img src="Profile_picture.jpg"
+             alt="Domagoj Gajski"
+             class="profile-photo">
 
-    <div class="hero-text">
-        <h1>Domagoj Gajski</h1>
-        <p><strong>Researcher in spider ecology, trophic interactions and biodiversity</strong></p>
+        <div class="hero-text">
 
-        <p>
-            Landscape Research Institute, Brno, Czech Republic
-        </p>
+            <h1>Domagoj Gajski</h1>
+
+            <p>
+                Researcher in spider ecology, forest ecology,
+                trophic interactions and biodiversity
+            </p>
+
+            <p>
+                Landscape Research Institute (VUKOZ),
+                Brno, Czech Republic
+            </p>
+
+        </div>
+
     </div>
 
-    <img src="Work Logo.png" alt="Institute logo" class="hero-logo">
-
-</div>
-
     <div class="section">
+
         <h2>Affiliation</h2>
+
         <p>
-            Landscape Research Institute, Brno, Czech Republic  
-            <br>
-            <a href="https://vuk.gov.cz/">Institutional webpage</a>
+            Landscape Research Institute,
+            Brno, Czech Republic
         </p>
+
+        <a href="https://vuk.gov.cz/">
+            Visit Institute Website
+        </a>
+
     </div>
 
     <div class="section">
-        <h2>Research interests</h2>
+
+        <h2>Research Interests</h2>
 
         <div class="tags">
-            <span>Spider ecology</span>
-            <span>Forest ecology</span>
-            <span>Trophic interactions</span>
-            <span>Dietary metabarcoding</span>
+
+            <span>Spider Ecology</span>
+            <span>Forest Ecology</span>
+            <span>Trophic Interactions</span>
+            <span>Dietary Metabarcoding</span>
             <span>Biodiversity</span>
+
         </div>
+
     </div>
 
     <div class="section">
+
         <h2>Profiles</h2>
 
-        <div class="links">
-            <a href="https://scholar.google.com/citations?user=OMK_kagAAAAJ&hl=hr&oi=ao">Google Scholar</a>
-            <a href="https://www.researchgate.net/profile/Domagoj-Gajski?ev=hdr_xprf">ResearchGate</a>
+        <div class="button-links">
+
+            <a href="https://scholar.google.com/citations?user=OMK_kagAAAAJ&hl=hr&oi=ao">
+                Google Scholar
+            </a>
+
+            <a href="https://www.researchgate.net/profile/Domagoj-Gajski?ev=hdr_xprf">
+                ResearchGate
+            </a>
+
         </div>
+
     </div>
 
     <div class="section">
-        <h2>Selected publications</h2>
 
-        <ul>
-            <li><a href="https://bsssjournals.onlinelibrary.wiley.com/doi/full/10.1111/ejss.70333">Karimi Nezhad et al. 2026</a></li>
-            <li><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jbi.70036">Viel et al. 2025</a></li>
-            <li><a href="https://link.springer.com/article/10.1007/s10340-023-01609-5">Gajski et al. 2024</a></li>
-            <li><a href="https://www.sciencedirect.com/science/article/pii/S1055790323002889">Gajski et al. 2024</a></li>
-            <li><a href="https://scijournals.onlinelibrary.wiley.com/doi/full/10.1002/ps.6262">Gajski et al. 2021</a></li>
+        <h2>Selected Publications</h2>
+
+        <ul class="publications">
+
+            <li>
+                <a href="https://bsssjournals.onlinelibrary.wiley.com/doi/full/10.1111/ejss.70333">
+                    Karimi Nezhad et al. (2026)
+                </a>
+            </li>
+
+            <li>
+                <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jbi.70036">
+                    Viel et al. (2025)
+                </a>
+            </li>
+
+            <li>
+                <a href="https://link.springer.com/article/10.1007/s10340-023-01609-5">
+                    Gajski et al. (2024)
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.sciencedirect.com/science/article/pii/S1055790323002889">
+                    Gajski et al. (2024)
+                </a>
+            </li>
+
+            <li>
+                <a href="https://scijournals.onlinelibrary.wiley.com/doi/full/10.1002/ps.6262">
+                    Gajski et al. (2021)
+                </a>
+            </li>
+
         </ul>
+
     </div>
 
     <div class="section">
+
         <h2>Contact</h2>
-        <p class="contact">domagoj.gajski@vuk.gov.cz</p>
+
+        <p class="contact">
+            domagoj.gajski@vuk.gov.cz
+        </p>
+
     </div>
 
 </div>
+
+<footer>
+    © 2026 Domagoj Gajski
+</footer>
 
 </body>
 </html>
+```
