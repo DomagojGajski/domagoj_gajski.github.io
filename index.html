@@ -20,33 +20,32 @@ body {
     position: relative;
 }
 
-/* Logo watermark */
-body::before {
-    content: "";
+/* Right-side logo background */
+.logo-bg {
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+
+    width: 40vw;
+    height: 100vh;
 
     background-image: url("Work Logo.png");
     background-repeat: no-repeat;
-    background-position: calc(100% - 20px) center;
-    background-size: 700px;
+    background-position: center right;
+    background-size: contain;
 
     opacity: 0.5;
     pointer-events: none;
     z-index: -1;
 }
 
+/* Main content on the left */
 .container {
-    width: 55%;
-    max-width: 800px;
-    margin-left: 80px;
+    width: 60%;
+    max-width: 900px;
+    margin-left: 60px;
     margin-right: auto;
-}
-@media (max-width: 768px) {
-    .container {
-        margin: auto;
-        padding: 16px;
-    }
+    padding: 30px;
 }
 
 /* HERO SECTION */
@@ -181,7 +180,21 @@ footer {
 
 /* MOBILE */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+
+    .logo-bg {
+        width: 100%;
+        opacity: 0.18;
+        background-position: center;
+        background-size: 80%;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 16px;
+    }
 
     .hero {
         flex-direction: column;
@@ -192,16 +205,14 @@ footer {
         width: 80%;
         max-width: 300px;
     }
-
-    body::before {
-        background-size: 350px;
-    }
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="logo-bg"></div>
 
 <div class="container">
 
@@ -218,7 +229,6 @@ footer {
             <p>
                 Molecular biologist, arachnologist, and statistician
             </p>
-
 
         </div>
 
@@ -331,4 +341,3 @@ footer {
 
 </body>
 </html>
-```
